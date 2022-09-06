@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-import { fetchGenres } from '../actions/genresActions';
+import { fetchGenres, deleteGenre } from '../actions/genresActions';
 import Genres from "./Genres";
 
 class GenresContainer extends Component {
@@ -11,10 +11,10 @@ class GenresContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
-        <Genres genres={this.props.genres}/>
-        {/* Here's Somethin! */}
+        <Genres genres={this.props.genres} deleteGenre={this.props.deleteGenre} />
       </div>
     )
   }
@@ -24,4 +24,11 @@ const mapStateToProps = state => {
   return { genres: state.genres }
 }
 
-export default connect(mapStateToProps, { fetchGenres })(GenresContainer)
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchGenres, 
+//     deleteGenre
+//   }
+// }
+
+export default connect(mapStateToProps, {fetchGenres, deleteGenre})(GenresContainer)

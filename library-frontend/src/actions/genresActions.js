@@ -19,3 +19,14 @@ export const addGenre = (genre) => {
     .then(genre => dispatch({ type: 'ADD_GENRE', payload: genre})
   )}
 }
+
+export const deleteGenre = (id) => {
+  return(dispatch) => {
+    fetch(`http://127.0.0.1:3001/genres/${id}`, {
+      method: 'DELETE'
+    })
+    .then(dispatch({ type: 'DELETE_GENRE', payload: id}))
+  }
+    
+}
+

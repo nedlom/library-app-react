@@ -1,8 +1,12 @@
 import React from "react";
 
-const Genre = ({ genre }) => {
+const Genre = ({ genre, deleteGenre }) => {
+ 
   return (
-    <li>{genre.name}</li>
+    <li>
+      {genre.name} 
+      <button onClick={() => deleteGenre(genre.id)}>Delete</button>
+    </li>
   )
 }
 
