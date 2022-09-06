@@ -1,12 +1,17 @@
 import React from "react";
 import GenresContainer from "./GenresContainer";
+import Router from "./Router";
+import Header from "./Header";
+
 
 class App extends React.Component {
 
   render() {
     return (
       <div>
-        <GenresContainer />
+        <Header />
+        <Router />
+        {/* <GenresContainer /> */}
       </div>
     )
   }
