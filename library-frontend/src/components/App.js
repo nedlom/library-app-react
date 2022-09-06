@@ -3,6 +3,7 @@ import GenresContainer from "./GenresContainer";
 import Router from "./Router";
 import Header from "./Header";
 import Genres from "./Genres";
+import GenresForm from "./GenresForm";
 
 
 class App extends React.Component {
@@ -11,9 +12,12 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <GenresContainer />
+        <GenresForm />
+
         {/* <Genres /> */}
         {/* <Router /> */}
-        <GenresContainer />
+        
       </div>
     )
   }

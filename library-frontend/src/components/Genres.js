@@ -7,7 +7,7 @@ const Genres = ({ genres }) => {
     <div>
       <h2>Genres List</h2>
       <ul>
-        {genres.map(genre=> <Genre genre={genre} />)}
+        {(genres.map(genre=> <Genre genre={genre} key={genre.id} />))}
       </ul>
       <br />
     </div>

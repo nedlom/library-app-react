@@ -5,3 +5,17 @@ export const fetchGenres = () => {
     .then(genres => dispatch({ type: 'FETCH_GENRES', payload: genres})
   )}
 }
+
+export const addGenre = (genre) => {
+  return (dispatch) => {
+    fetch('http://127.0.0.1:3001/genres', {
+      method: 'POST', 
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(genre)
+    })
+    .then(resp => resp.json())
+    .then(genre => dispatch({ type: 'ADD_GENRE', payload: genre})
+  )}
+}
