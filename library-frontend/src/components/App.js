@@ -1,6 +1,7 @@
 import React from "react";
 
 import Header from "./Header";
+import Footer from "./Footer";
 import GenresContainer from "../containers/GenresContainer";
 
 class App extends React.Component {
@@ -9,7 +10,8 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <GenresContainer />    
+        <GenresContainer />  
+        <Footer /> 
       </div>
     )
   }

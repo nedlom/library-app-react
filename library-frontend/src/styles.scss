@@ -18,3 +18,17 @@ h1 {
     0 -80px 70px #973716, 10px -90px 80px #451b0e;
   display: inline-block;
 }
+
+// html, body, #root, #thing {
+//   height: 100%
+// }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  // background-color: red;
+  // color: white;
+  text-align: center;
+}
