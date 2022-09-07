@@ -27,6 +27,5 @@ export const deleteGenre = (id) => {
     })
     .then(dispatch({ type: 'DELETE_GENRE', payload: id}))
   }
-    
 }
 

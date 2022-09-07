@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 
-import { addGenre } from '../actions/genresActions'
+import { addGenre } from '../../actions/genresActions'
 
 class GenresForm extends Component {
 
