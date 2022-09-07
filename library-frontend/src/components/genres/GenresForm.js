@@ -1,41 +1,63 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React, { useState } from 'react';
+
+
 import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 import { addGenre } from '../../actions/genresActions'
 
-class GenresForm extends Component {
 
-  constructor() {
-    super()
-    this.state = {
-      name: ""
-    }
+// class GenresForm extends Component 
+const GenresForm = (props) => {
+
+  const history = useHistory();
+
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     name: ""
+  //   }
+  // }
+
+  const [name, setName] = useState("")
+
+  // handleChange = event => {
+  //   this.setState({
+  //     name: event.target.value
+  //   })
+  // }
+
+  const handleChange = event => {
+    setName(event.target.value)
   }
 
-  handleChange = event => {
-    this.setState({
-      name: event.target.value
-    })
-  }
-
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault()
-    this.props.addGenre(this.state)
-    this.setState({
-      name: ""
-    })
+    // this.props.addGenre(this.state)
+    props.addGenre(name)
+    setName("")
+    // this.setState({
+    //   name: ""
+    // })
+    history.push("/genres")
   }
 
-  render() {
+  // render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>Name: </label>
-        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
-        <input type="submit" value="Create" />
-      </form>
+      <div className="form-div">
+        <form onSubmit={handleSubmit}>
+          <label>Enter Genre Name</label>
+          <br />
+          <input type="text" name="name" value={name} onChange={handleChange} />
+          <br />
+          <input type="submit" value="Create" className='create-button' />
+        </form>
+      </div>
+      
     )
   }
 
-}
+// }
 
 export default connect(null, { addGenre })(GenresForm)

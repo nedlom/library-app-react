@@ -2,15 +2,17 @@ import React from "react";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import GenresContainer from "../containers/GenresContainer";
+import Routes from "../router/Router";
+// import GenresContainer from "../containers/GenresContainer";
 
 class App extends React.Component {
 
   render() {
     return (
       <div>
-        <Header />
-        <GenresContainer />  
+        {/* <Header /> */}
+        {/* <GenresContainer />   */}
+        <Routes />
         <Footer /> 
       </div>
     )

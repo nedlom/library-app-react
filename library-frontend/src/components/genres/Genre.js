@@ -1,15 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux"
+
 import BooksContainer from '../../containers/BooksContainer'
 
-const Genre = ({ genre, deleteGenre }) => {
- 
+// debugger
+const Genre = props => {
+
+  // console.log(props)
+  const genre = props.genres.find(g => g.id === parseInt(props.match.params.id))
+  // console.log(genre)
+  // console.log(props.genre.books)
   return (
-    <li>
-      {genre.name} 
-      <button onClick={() => deleteGenre(genre.id)}>Delete</button>
-      {genre.books ? <BooksContainer books={genre.books} /> : null}
-    </li>
-  )
+    
+    // <div>hello</div>
+    <BooksContainer genre={genre} />
+
+      // <Link to={`genres/${props.genre.id}/books`}>{props.genre.name}</Link>
+      // <BooksContainer books={props.genre.books} />
+  
+  ) 
 }
 
-export default Genre
+const mapStateToProps = state => {
+  return { genres: state.genres }
+}
+
+export default connect(mapStateToProps)(Genre)

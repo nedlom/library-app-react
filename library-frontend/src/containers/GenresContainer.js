@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 
 import { fetchGenres, deleteGenre } from '../actions/genresActions';
 import Genres from "../components/genres/Genres";
+import Genre from "../components/genres/Genre";
+
 import GenresForm from "../components/genres/GenresForm";
 
 class GenresContainer extends Component {
@@ -12,10 +15,8 @@ class GenresContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
-        <GenresForm />
         <Genres genres={this.props.genres} deleteGenre={this.props.deleteGenre} />
       </div>
     )
