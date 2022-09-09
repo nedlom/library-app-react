@@ -1,64 +1,38 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
 
-const link = {
-  width: "100px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-};
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
+
+import Footer from "./Footer";
+import Home from "./Home";
+import About from "./About";
+import GenresContainer from "../containers/GenresContainer";
+import BooksContainer from "../containers/BooksContainer"
+import BooksContainerTest from "../containers/BookContainerTest";
+import Genre from "./genres/Genre";
+import Book from "./books/Book";
 
 const Header = () => {
   return (
     <header>
       <h1>Book Tracker</h1>
-      <hr />
 
-      <NavLink
-      to="/"
-      /* set exact so it knows to only set activeStyle when route is deeply equal to link */
-      exact
-      /* add styling to Navlink */
-      style={link}
-      /* add prop for activeStyle */
-      activeStyle={{
-        background: "darkblue",
-      }}
-    >
-      Home
-    </NavLink>
-    <NavLink
-      to="/about"
-      exact
-      style={link}
-      activeStyle={{
-        background: "darkblue",
-      }}
-    >
-      About
-    </NavLink>
-    <NavLink
-      to="/genres"
-      exact
-      style={link}
-      activeStyle={{
-        background: "darkblue",
-      }}
-    >
-      Genres
-    </NavLink>
-    <NavLink
-      to="/genres/new"
-      exact
-      style={link}
-      activeStyle={{
-        background: "darkblue",
-      }}
-    >
-      Create Genre
-    </NavLink>
+      
+            <div>
+              <nav>
+                <Link className="link" to="/">Home</Link>
+                <Link className="link" to="/about">About</Link>
+                <Link className="link" to="/genres">Genres</Link>
+              </nav>
+            </div>
+            <hr />
+           
+            
+            
     
     </header>
   )

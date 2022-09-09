@@ -47,7 +47,7 @@ const GenresForm = (props) => {
     return (
       <div className="form-div">
         <form onSubmit={handleSubmit}>
-          <label>Enter Genre Name</label>
+          <label>Add A Genre</label>
           <br />
           <input type="text" name="name" value={name} onChange={handleChange} />
           <br />

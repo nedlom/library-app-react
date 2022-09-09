@@ -6,7 +6,7 @@ import About from "../components/About";
 import GenresContainer from "../containers/GenresContainer";
 import GenresForm from "../components/genres/GenresForm";
 import Genres from "../components/genres/Genres";
-import Header from "../components/Header";
+import Header from "../components/Header1";
 import Genre from "../components/genres/Genre";
 import BooksContainer from "../containers/BooksContainer";
 

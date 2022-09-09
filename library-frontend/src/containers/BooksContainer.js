@@ -1,24 +1,41 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-import { getBooksFromGenres } from '../actions/booksActions'
-import Books from '../components/books/Books'
+import { fetchBooks } from '../actions/booksActions'
+import Books from "../components/books/Books";
+import BooksForm from "../components/books/BooksForm";
 
 class BooksContainer extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.genre = props.genres.find(g => {
+      return g.id === parseInt(this.props.match.params.id)
+    })
+  }
 
-  componentDidMount() {
-    // console.log(this.props.genre.books)
-    this.props.getBooksFromGenres(this.props.genre.books)
+  genreBooks = () => {
+    return this.props.books.filter(b => b.genre_id === this.genre.id)
   }
 
   render() {
-    // console.log(this.props)
-    // console.log("BooksContainer: ", this.props )
-    return <Books books={this.props.genre.books}/>
+    debugger
+    return (
+    <div>
+      <BooksForm />
+      <Books genre={this.genre} books={this.genre.books} />
+    </div>
+    )
+   
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    books: state.books,
+    genres: state.genres
   }
 }
 
 
-
-
-export default connect(null, { getBooksFromGenres })(BooksContainer)
+export default connect(mapStateToProps, { fetchBooks })(BooksContainer)

@@ -1,12 +1,39 @@
 import React from "react";
+import Book from "./Book";
 
-const Books = props => {
+const Books = ({ }) => {
+  debugger
+  // const bookList = books.map(book => {
+  //   return (
+  //     <Book book={book} />
+  //   )
+  // })
+
+  // console.log(books === [])
+
   
-  console.log(props.books)
-  const books = props.books.map(b => <li>{b.title}</li>)
-  console.log(books)
-  // const mapping = props.books.map(book => <li key={book.id}>{book.title} by {book.author}</li>)
-  return <ul>{books}</ul>
+
+  // if (bookList.length === 0) {
+  //   return (
+  //     <div>
+  //       <h3 className="section-name">{name}</h3>
+  //       <div className="empty">{name} genre is empty.</div>
+  //     </div>
+  //   )
+  // } else {
+  //   return (
+  //     <div>
+  //       <div>
+  //         <h3 className="section-name">{name}</h3>
+  //       </div>
+  //       <div className="grid-container">
+  //         {bookList}
+  //       </div>
+  //     </div>
+  //   )
+  // }
 }
+  
+
 
 export default Books

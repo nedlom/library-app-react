@@ -1,29 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux"
+import BooksContainer from "../../containers/BooksContainer";
 
-import BooksContainer from '../../containers/BooksContainer'
-
-// debugger
 const Genre = props => {
 
-  // console.log(props)
-  const genre = props.genres.find(g => g.id === parseInt(props.match.params.id))
-  // console.log(genre)
-  // console.log(props.genre.books)
-  return (
+  const goHere = () => {
     
-    // <div>hello</div>
-    <BooksContainer genre={genre} />
+    return <BooksContainer />
+    // console.log("hello")
+  }
 
-      // <Link to={`genres/${props.genre.id}/books`}>{props.genre.name}</Link>
-      // <BooksContainer books={props.genre.books} />
-  
+  return (
+    <div className="grid-item">
+      <b className="genre-name">{props.genre.name}</b>
+      <div>
+        <button className="genre-button">Booklist</button>
+        <span className="spacer"></span>
+        <button className="genre-button">Delete</button>
+      </div>
+    </div>
+    
+    // <Link to={`/genres/${props.genre.id}`}>{props.genre.name}</Link>
+    // <button onClick={goHere}>{props.genre.name}</button>
   ) 
 }
 
-const mapStateToProps = state => {
-  return { genres: state.genres }
-}
-
-export default connect(mapStateToProps)(Genre)
+export default Genre

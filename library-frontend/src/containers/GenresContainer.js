@@ -1,23 +1,33 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
 
 import { fetchGenres, deleteGenre } from '../actions/genresActions';
 import Genres from "../components/genres/Genres";
-import Genre from "../components/genres/Genre";
-
 import GenresForm from "../components/genres/GenresForm";
+import GenreDropdown from "../components/genres/GenreDropdown";
+
 
 class GenresContainer extends Component {
+  constructor() {
+    super() 
+    this.state = { isActive: false}
+  }
 
   componentDidMount() {
     this.props.fetchGenres()
   }
 
+  handleToggle = () => {
+    this.setState({ isActive: !this.state.isActive });
+  }
+
   render() {
     return (
-      <div>
-        <Genres genres={this.props.genres} deleteGenre={this.props.deleteGenre} />
+      <div id="genre-container" className={this.state.isActive ? "no-display" : null}>
+        <GenresForm />
+        <Genres genres={this.props.genres} />
+        <GenreDropdown />
+        <button onClick={this.handleToggle}>Toggle Container</button>
       </div>
     )
   }
