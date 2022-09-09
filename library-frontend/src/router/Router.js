@@ -6,7 +6,7 @@ import About from "../components/About";
 import GenresContainer from "../containers/GenresContainer";
 import GenresForm from "../components/genres/GenresForm";
 import Genres from "../components/genres/Genres";
-import Header from "../components/Header1";
+
 import Genre from "../components/genres/Genre";
 import BooksContainer from "../containers/BooksContainer";
 
@@ -14,7 +14,7 @@ import BooksContainer from "../containers/BooksContainer";
 const Routes = () => {
   return (
     <Router>
-      <Header />
+
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/genres" component={GenresContainer} />

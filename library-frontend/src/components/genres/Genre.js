@@ -1,26 +1,16 @@
 import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
-import BooksContainer from "../../containers/BooksContainer";
-import Home from "../Home";
-import Test from "./test";
+import { Link } from "react-router-dom";
+
+
 
 const Genre = props => {
 
-
   console.log(props)
-  const goHere = () => {
-    
-    return <BooksContainer />
-    // console.log("hello")
-  }
-
   return (
     <div className="grid-item">
 
-      <Link to={`/genres/${props.genre.id}`}>{props.genre.name}</Link>
+      <Link to={`/genres/${props.indexOf}`}>{props.genre.name}</Link>
       
-      
-        <Route path="genres/:id" render={Test} />
       
       {/* <b className="genre-name">{props.genre.name}</b>
       <div>

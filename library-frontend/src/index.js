@@ -8,8 +8,6 @@ import './styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './components/App';
-import Routes from './router/Router';
-
 
 import { rootReducer } from './reducers/rootReducer';
 

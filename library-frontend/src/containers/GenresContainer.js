@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { fetchGenres, deleteGenre } from '../actions/genresActions';
 import Genres from "../components/genres/Genres";
 import GenresForm from "../components/genres/GenresForm";
-import GenreDropdown from "../components/genres/GenreDropdown";
 
 
 class GenresContainer extends Component {

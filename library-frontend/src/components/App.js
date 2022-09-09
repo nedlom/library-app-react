@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 import {
   BrowserRouter as Router,
-  Switch,
+ 
   Route,
-  Link
+ 
 } from "react-router-dom"
 
 import Header from "./Header";
@@ -14,9 +14,7 @@ import Home from "./Home";
 import About from "./About";
 import GenresContainer from "../containers/GenresContainer";
 import BooksContainer from "../containers/BooksContainer"
-import BooksContainerTest from "../containers/BookContainerTest";
-import Genre from "./genres/Genre";
-import Book from "./books/Book";
+
 
 import { fetchBooks } from '../actions/booksActions'
 import { fetchGenres } from '../actions/genresActions'
@@ -29,6 +27,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("App")
     return (
       <div id="container">
         <Router>
@@ -43,6 +42,7 @@ class App extends React.Component {
             <Route  exact path="/genres">
               <GenresContainer />
             </Route>
+            <Route path="/genres/:indexOf" render={routerProps => <BooksContainer {...routerProps}/>} />
             {/* <Route exact path="/genres/:id" render={props => <BooksContainer {...props} />} /> */}
           {/* </Switch> */}
         </Router>     

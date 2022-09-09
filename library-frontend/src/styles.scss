@@ -28,6 +28,7 @@ header {
   
 }
 footer {
+  border-top: solid 1px black;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -35,6 +36,20 @@ footer {
   // background: blue;
   // color: #666;  // color: white;
   text-align: center;
+  background-color: white;
+}
+
+hr {
+  margin: 1px;
+}
+
+.book-form {
+  border: solid 5px black;
+  text-align: center;
+}
+
+.book-form-inputs {
+  margin: 5px;
 }
 
 
