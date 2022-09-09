@@ -42,7 +42,7 @@ class App extends React.Component {
             <Route  exact path="/genres">
               <GenresContainer />
             </Route>
-            <Route path="/genres/:indexOf" render={routerProps => <BooksContainer {...routerProps}/>} />
+            <Route path="/genres/:index" render={routerProps => <BooksContainer {...routerProps}/>} />
             {/* <Route exact path="/genres/:id" render={props => <BooksContainer {...props} />} /> */}
           {/* </Switch> */}
         </Router>     
@@ -50,6 +50,12 @@ class App extends React.Component {
       </div>
     )
   }
+}
+
+const mapStateToProps = state => {
+  return ({
+    genres: state.genres
+  })
 }
 
 export default connect(null, { fetchBooks, fetchGenres })(App)

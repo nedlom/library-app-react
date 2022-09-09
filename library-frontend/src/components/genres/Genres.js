@@ -1,14 +1,12 @@
 import React from 'react';
 
-
 import Genre from './Genre';
 
-const Genres = ({ genres }) => {
-  
+const Genres = (props) => {
   return (
     <div className="grid-container" >
-      {genres.map(genre => (
-          <Genre genre={genre} indexOf={genres.indexOf(genre)} />
+      {props.genres.map((genre, index) => (
+          <Genre genre={genre} index={index} deleteGenre={props.deleteGenre} />
       ))}
     </div>
   )

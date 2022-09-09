@@ -1,22 +1,27 @@
 import React from "react";
 
-const Book = ({ book }) => {
+const Book = props => {
 
-  console.log(book)
+  console.log(props)
  
   return (
     <div id="book">
       <b>
-        {book.title}
+        {props.book.title}
       </b>
       <div>
-        by {book.author}
+        by {props.book.author}
       </div>
       <hr />
       <div>
-        {book.description}
+        {props.book.description}
       </div>
+
+      <div className="delete-div">
+      <button className="delete-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
     </div>
+    </div>
+    
   )
 }
 

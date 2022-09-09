@@ -1,22 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux'
-import { deleteGenre } from "../../actions/genresActions";
+
+import GenreDelete from "./GenreDelete";
+import GenreLink from "./GenreLink";
 
 const Genre = props => {
-
-  console.log(props)
   return (
     <div className="grid-item">
-      <div className="genre-link">
-        <Link  to={`/genres/${props.indexOf}`}>{props.genre.name}</Link>
-      </div>
-      <div className="delete-div">
-        <button className="delete-btn" onClick={() => props.deleteGenre(props.genre.id)}>Delete</button>
-      </div>
+      <GenreLink index={props.index} genre={props.genre} />
+      <GenreDelete genre={props.genre} deleteGenre={props.deleteGenre} />
     </div>
   ) 
 }
 
-export default connect(null, { deleteGenre })(Genre)
+export default Genre
 

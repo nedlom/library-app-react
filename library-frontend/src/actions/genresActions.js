@@ -21,7 +21,6 @@ export const addGenre = (obj) => {
 }
 
 export const deleteGenre = (id) => {
-  debugger
   return(dispatch) => {
     fetch(`http://127.0.0.1:3001/genres/${id}`, {
       method: 'DELETE'
