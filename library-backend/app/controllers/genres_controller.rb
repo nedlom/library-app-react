@@ -19,7 +19,7 @@ class GenresController < ApplicationController
     @genre = Genre.new(genre_params)
 
     if @genre.save
-      render json: @genre, status: :created, location: @genre
+      render json: @genre, except: [:created_at, :updated_at], include: {books: {except: [:created_at, :updated_at]}}, status: :created, location: @genre
     else
       render json: @genre.errors, status: :unprocessable_entity
     end
