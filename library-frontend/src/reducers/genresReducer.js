@@ -4,7 +4,6 @@ export const genresReducer = (state = [], action) => {
     case 'FETCH_GENRES':
       return action.payload
     case 'ADD_GENRE':
-      debugger
       return [...state, action.payload]
     case 'DELETE_GENRE':
       return state.filter(genre => genre.id !== action.payload)

@@ -23,7 +23,7 @@ class BooksContainer extends Component {
   render() {
     return (
     <div>
-      <BooksForm />
+      <BooksForm stuff={this.props} />
       <Books />
     </div>
     )

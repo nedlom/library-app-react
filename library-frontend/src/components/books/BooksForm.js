@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { addBook } from '../../actions/booksActions'
+import { connect } from 'react-redux'
+
 
 class BooksForm extends Component {
 
@@ -21,6 +24,12 @@ class BooksForm extends Component {
   handleSubmit = event => {
     event.preventDefault()
     console.log("hello there")
+    const genreId = this.props.stuff.genres[parseInt(this.props.stuff.match.params.indexOf)].id
+    const body = Object.assign({}, this.state, {genre_id: genreId})
+    this.props.addBook(body)
+    // debugger
+
+    console.log(this.props)
   }
 
   render() {
@@ -49,4 +58,4 @@ class BooksForm extends Component {
   }
 }
 
-export default BooksForm
+export default connect(null, { addBook })(BooksForm)
