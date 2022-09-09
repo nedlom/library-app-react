@@ -94,6 +94,11 @@ h1 {
   background-color: white;
 }
 
+
+.book { 
+  border: solid black;
+  width: 50%;
+}
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -149,7 +154,8 @@ h1 {
 }
 
 .delete-div {
-  border-top: solid 1px #594a42;;
+  border-top: solid 1px #594a42;
+ 
 }
 
 .genre-link {
@@ -157,18 +163,7 @@ h1 {
 }
 
 
-.grid-container-books {
-  display: grid;
-  // grid-template-columns: auto auto;
-   
-    grid-template-columns: auto auto; 
-  // background-color: #2196F3;
-  // padding: 10px;
-}
-.grid-item-books {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 8px;
-  // font-size: 30px;
-  text-align: center;
+#text-area { 
+  width: 50%;
+  height: 20%;
 }

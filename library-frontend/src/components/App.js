@@ -32,7 +32,6 @@ class App extends React.Component {
       <div id="container">
         <Router>
           <Header />
-          {/* <Switch> */}
             <Route exact path="/">
               <Home />
             </Route>
