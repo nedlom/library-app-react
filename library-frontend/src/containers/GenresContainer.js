@@ -26,7 +26,6 @@ class GenresContainer extends Component {
       <div id="genre-container" className={this.state.isActive ? "no-display" : null}>
         <GenresForm />
         <Genres genres={this.props.genres} />
-        <GenreDropdown />
         <button onClick={this.handleToggle}>Toggle Container</button>
       </div>
     )

@@ -1,12 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from 'react-redux'
 
 const Home = props => {
-  
-  // componentDidMount() {
-  //   this.props.fetchGenres()
-  //   this.props.fetchBooks()
-  // }
 
   const randomBook = props.books[Math.floor(Math.random() * props.books.length)];
     if (randomBook) {
@@ -28,7 +23,6 @@ const Home = props => {
       return <div>waiting</div>
     }
   }
-
 
 const mapStateToProps = state => {
   return ({
