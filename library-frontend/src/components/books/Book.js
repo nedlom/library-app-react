@@ -5,6 +5,7 @@ const Book = props => {
   console.log(props)
  
   return (
+    <div className="grid-item-books">
     <div id="book">
       <b>
         {props.book.title}
@@ -18,7 +19,8 @@ const Book = props => {
       </div>
 
       <div className="delete-div">
-      <button className="delete-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
+        <button className="delete-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
+      </div>
     </div>
     </div>
     

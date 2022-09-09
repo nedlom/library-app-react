@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 // import { withRouter } from "react-router-dom";
 
-import { fetchBooks } from '../actions/booksActions'
-import { fetchGenres } from '../actions/genresActions';
+// import { fetchBooks } from '../actions/booksActions'
+// import { fetchGenres } from '../actions/genresActions';
 import { addBook, deleteBook } from "../actions/booksActions";
 
 import Books from "../components/books/Books";
@@ -13,15 +13,23 @@ class BooksContainer extends Component {
 
   render() {
     
-    const genreIndex = parseInt(this.props.match.params.index)
-    const genre = this.props.genres[genreIndex]
-    console.log("gothere")
+    // const genre = this.props.genre.find(genre => this.props.genreId === genre.id)
+    // debugger
+
+    // const genreId = "hello"
+    // debugger
+    // const genreIndex = parseInt(this.props.match.params.index)
+    // const genre = this.props.genres[genreIndex]
+    const genre = {
+      id: this.props.match.params.id,
+      name: this.props.match.params.name
+    }
 
     return (
       
       <div>
-        <BooksForm genre={genre} addBook={this.props.addBook}/>
-        <Books genre={genre} deleteBook={this.props.deleteBook} />
+        <BooksForm  genre_id={genre.id} addBook={this.props.addBook} />
+        <Books genre={genre} books={this.props.books}  deleteBook={this.props.deleteBook} />
       </div>
     )
    
@@ -31,9 +39,7 @@ class BooksContainer extends Component {
 const mapStateToProps = state => {
   return {
     books: state.books,
-    genres: state.genres
   }
 }
 
-
-export default connect(mapStateToProps, { fetchBooks, fetchGenres, addBook, deleteBook })(BooksContainer)
+export default connect(mapStateToProps, { addBook, deleteBook })(BooksContainer)

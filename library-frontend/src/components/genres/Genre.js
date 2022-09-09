@@ -6,7 +6,7 @@ import GenreLink from "./GenreLink";
 const Genre = props => {
   return (
     <div className="grid-item">
-      <GenreLink index={props.index} genre={props.genre} />
+      <GenreLink index={props.index} genre={props.genre} genreId={props.genre.id} />
       <GenreDelete genre={props.genre} deleteGenre={props.deleteGenre} />
     </div>
   ) 

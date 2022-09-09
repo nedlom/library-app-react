@@ -11,9 +11,7 @@ import Genres from "../components/genres/Genres";
 import GenresForm from "../components/genres/GenresForm";
 
 class GenresContainer extends Component {
-  constructor() {
-    super() 
-  }
+  
 
   // componentDidMount() {
   //   this.props.fetchGenres()

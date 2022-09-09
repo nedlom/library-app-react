@@ -2,11 +2,11 @@ import React from 'react';
 
 import Genre from './Genre';
 
-const Genres = (props) => {
+const Genres = props => {
   return (
     <div className="grid-container" >
       {props.genres.map((genre, index) => (
-          <Genre genre={genre} index={index} deleteGenre={props.deleteGenre} />
+          <Genre key={genre.id} genre={genre} index={index} deleteGenre={props.deleteGenre} />
       ))}
     </div>
   )

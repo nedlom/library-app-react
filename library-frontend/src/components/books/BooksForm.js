@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-// import { addBook } from '../../actions/booksActions'
-// import { connect } from 'react-redux'
-
 
 class BooksForm extends Component {
 
@@ -20,22 +17,12 @@ class BooksForm extends Component {
     const { name, value } = event.target
     this.setState({
       [name]: value, 
-      genre_id: this.props.genre.id.toString()
+      genre_id: this.props.genre_id
     })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    // console.log("hello there")
-
-    // console.log(this.props.genre)
-    
-    // console.log(this.state)
-
-    console.log(this.state)
-    console.log(this.props)
-
-    // const body = Object.assign({}, this.state, {genre_id: this.props.genre.id})
     this.props.addBook(this.state)
     this.setState({
         title: "",
@@ -43,14 +30,6 @@ class BooksForm extends Component {
         description: "",
         genre_id: ""
     })
-
-    // console.log(body)
-    // const genreId = this.props.stuff.genres[parseInt(this.props.stuff.match.params.indexOf)].id
-    // const body = Object.assign({}, this.state, {genre_id: genreId})
-    // this.props.addBook(body)
-    // debugger
-
-    // console.log(this.props)
   }
 
   render() {
@@ -79,5 +58,4 @@ class BooksForm extends Component {
   }
 }
 
-// export default connect(null, { addBook })(BooksForm)
 export default BooksForm
