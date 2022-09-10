@@ -34,28 +34,26 @@ class BooksForm extends Component {
 
   render() {
     return (
-      <div className="book-form">
-        <div>Add A Book:</div>
+      
         <form onSubmit={this.handleSubmit}>
          
           <div className="book-form-inputs">
             <input type="text" onChange={this.handleChange} value={this.state.title} name="title" placeholder="title"/>
-          </div>
-
-          <div className="book-form-inputs">
+            <span></span>
             <input type="text" onChange={this.handleChange} value={this.state.author} name="author" placeholder="author"/>
           </div>
           
           <div className="book-form-inputs">
-            <textarea id="text-area" type="text" onChange={this.handleChange} value={this.state.description} name="description" placeholder="description"/>
+            <textarea id="text-area" rows="5" cols="50" type="text" onChange={this.handleChange} value={this.state.description} name="description" placeholder="description"/>
           </div>
           
-
           <div className="book-form-inputs">
             <input type="submit" value="Add Book"/>
           </div>
         </form>
-      </div>
+ 
+
+    
     )
   }
 }

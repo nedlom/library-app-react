@@ -4,7 +4,7 @@ import Genre from './Genre';
 
 const Genres = props => {
   return (
-    <div className="grid-container" >
+    <div className="genre-grid" >
       {props.genres.map((genre, index) => (
           <Genre key={genre.id} genre={genre} index={index} deleteGenre={props.deleteGenre} />
       ))}

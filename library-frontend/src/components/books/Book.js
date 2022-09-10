@@ -9,20 +9,16 @@ const Book = props => {
 
       <div className="book-info">
         <b>
-          {props.book.title}
+          {props.book.title} by {props.book.author}
         </b>
-        <div>
-          by {props.book.author}
-        </div>
-        <hr />
         <div>
           {props.book.description}
         </div>
       </div>
 
-      <div className="delete-div">
-        <button className="delete-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
-      </div>
+      
+        <button className="delete-book-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
+    
     
   </div>
     

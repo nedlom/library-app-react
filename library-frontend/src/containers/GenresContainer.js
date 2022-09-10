@@ -22,6 +22,7 @@ class GenresContainer extends Component {
       <div id="genre-container">
         <GenresForm addGenre={this.props.addGenre}/>
         <Genres genres={this.props.genres} deleteGenre={this.props.deleteGenre} />
+       
       </div>
     )
   }

@@ -17,10 +17,11 @@ class BooksContainer extends Component {
 
     return (
       
-      <div className="book-container">
+      <div className="books-container">
+        <h4>{genre.name}</h4>
         <BooksForm genre_id={genre.id} addBook={this.props.addBook} />
-        
         <Books genre={genre} books={this.props.books}  deleteBook={this.props.deleteBook} />
+        <div className="add-space"></div>
       </div>
     )
    
