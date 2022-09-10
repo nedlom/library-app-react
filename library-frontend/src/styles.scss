@@ -6,7 +6,7 @@
   grid-gap: 20px; 
   // border: 1px solid black; 
   width: 80%; 
-  height: 80%;
+  height: 50%;
 } 
 .grid-home-item { 
   // text-align: center;
@@ -25,6 +25,21 @@
 .center {
   text-align: center;
 }
+
+#about {
+  // border: solid 1px black;
+  text-align: center;
+  
+  padding: 12% 0;
+}
+
+.ul-align {
+  line-height: 2.5em;
+  display: inline-block;
+  text-align: left;
+}
+
+
 
 
 
@@ -117,7 +132,7 @@ h1 {
 
 }
 
-#about, #genre-container, #genre, #book, .empty {
+#genre-container, #genre, #book, .empty {
   text-align: center;
   border: solid;
   padding: 2rem;
