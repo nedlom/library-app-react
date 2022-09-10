@@ -1,15 +1,36 @@
-#root {
-  background-color: white;
-  position: absolute;
-  top: 5;
-  height: 100%;
-  width: 100%;
-  font-family: 'proxima-nova',sans-serif;
-  color: #594a42;
+
+.grid-container-home { 
+  display: grid; 
+  margin: auto;
+  grid-template-columns: 1fr 1fr; 
+  grid-gap: 20px; 
+  // border: 1px solid black; 
+  width: 80%; 
+  height: 80%;
+} 
+.grid-home-item { 
+  // text-align: center;
+  margin: 10px; 
+  // border: 1px solid red; 
 }
+
+.spacer1 {
+  height: 35%;
+}
+
+.spacer2 {
+  height: 20%
+}
+
+.center {
+  text-align: center;
+}
+
+
 
 #container {
   position: absolute;
+  // background-color: white;
   top: 0;
   left: 0;
   height: 100%;
@@ -23,6 +44,7 @@ header {
 }
 
 #home {
+  top: 50%;
   border: solid;
   padding: 2rem;
   
@@ -30,7 +52,7 @@ header {
 footer {
   border-top: solid 1px black;
   position: fixed;
-  left: 0;
+  // left: 0;
   bottom: 0;
   width: 100%;
   // background: blue;
@@ -84,6 +106,15 @@ h1 {
 
 .create-button {
   margin: 8px
+}
+
+.books-container {
+  text-align: center;
+  border: solid;
+  padding: 2rem;
+  // margin: 0rem 5rem;
+  background-color: white;
+
 }
 
 #about, #genre-container, #genre, #book, .empty {
@@ -166,4 +197,15 @@ h1 {
 #text-area { 
   width: 50%;
   height: 20%;
+}
+
+.book-section-title {
+  margin: 20px;
+  padding: 20px;
+  border: solid;
+}
+
+.books-container {
+  margin: 20px;
+  border: solid;
 }

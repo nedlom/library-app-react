@@ -17,7 +17,7 @@ class BooksContainer extends Component {
 
     return (
       
-      <div>
+      <div className="book-container">
         <BooksForm genre_id={genre.id} addBook={this.props.addBook} />
         
         <Books genre={genre} books={this.props.books}  deleteBook={this.props.deleteBook} />
