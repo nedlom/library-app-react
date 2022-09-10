@@ -3,7 +3,12 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <h4>Book Tracker Footer</h4>
+      <div className="footer-item left">
+        Book Tracker
+      </div>
+      <div className="footer-item right">
+        Creater/Designer: Nick Lombardi
+      </div>
     </footer>
   )
 }

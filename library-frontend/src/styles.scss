@@ -98,17 +98,6 @@ header {
   padding: 2rem;
   
 }
-footer {
-  border-top: solid 1px black;
-  position: fixed;
-  // left: 0;
-  bottom: 0;
-  width: 100%;
-  // background: blue;
-  // color: #666;  // color: white;
-  text-align: center;
-  background-color: white;
-}
 
 hr {
   margin: 1px;
@@ -239,7 +228,6 @@ h1 {
  
 }
 
-
 .book-form-inputs {
   margin: 10px;
 }
@@ -250,4 +238,28 @@ h1 {
 
 span {
   margin: 5px;
+}
+
+// footer -----------------------------------
+
+footer {
+  border-top: solid 1px black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+.footer-item {
+  display: inline-block;
+  padding: 5px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
