@@ -17,7 +17,7 @@ const Book = props => {
       </div>
 
       
-        <button className="delete-book-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
+     <button className="delete-book-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
     
     
   </div>

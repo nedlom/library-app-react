@@ -8,11 +8,11 @@ const About = () => {
       </p>
 
       <ul className="ul-align">
-        <li>Simple To Use</li>
+        <li>Clean And Minimalistic</li>
         <li>Intuitive Design</li>
         <li>Decluttered UI</li>
-        <li>Clean And Minimalistic</li>
-      </ul>
+        <li>Simple To Use</li>
+     </ul>
 
       <p>
         <b>Create A Genre And Add Books</b>
