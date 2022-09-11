@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-import { addBook, deleteBook } from "../actions/booksActions";
+import { fetchBooks, addBook, deleteBook } from "../actions/booksActions";
 
 import Books from "../components/books/Books";
 import BooksForm from "../components/books/BooksForm";
 
 class BooksContainer extends Component {
+
+  // componentDidMount() {
+  //   this.props.fetchBooks()
+  // }
 
   render() {
     
@@ -34,4 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addBook, deleteBook })(BooksContainer)
+export default connect(mapStateToProps, { fetchBooks, addBook, deleteBook })(BooksContainer)

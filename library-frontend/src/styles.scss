@@ -30,7 +30,7 @@
   // border: solid 1px black;
   text-align: center;
   
-  padding: 12% 0;
+  padding: 10% 0;
 }
 
 .ul-align {
@@ -109,10 +109,21 @@ hr {
 
 
 .link {
+  // box-shadow: inset 0 0 0 0 #54b3d6;
   margin-left: 1rem;
   margin-right: 1rem;
   // color: black;
+  // border: solid;
 }
+
+// a:hover {
+//     border: 1px solid;
+//     padding: 10px;
+//     box-shadow: 5px 10px;
+  
+// }
+
+
 
 h1 {
   // text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85,
