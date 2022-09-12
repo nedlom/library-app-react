@@ -29,7 +29,7 @@ class App extends React.Component {
   render() {
     console.log("App")
     return (
-      <div id="container">
+      
         <Router>
           <Header />
 
@@ -48,9 +48,10 @@ class App extends React.Component {
               <GenresContainer />
             </Route>
             <Route path="/genres/:id/:name" render={routerProps => <BooksContainer {...routerProps}/>} /> */}
-        </Router>     
         <Footer /> 
-      </div>
+        </Router>     
+        
+    
     )
   }
 }
