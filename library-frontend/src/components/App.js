@@ -32,7 +32,13 @@ class App extends React.Component {
       <div id="container">
         <Router>
           <Header />
-            <Route exact path="/">
+
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/genres" component={GenresContainer} /> 
+          <Route path="/genres/:id/:name" render={routerProps => <BooksContainer {...routerProps}/>} />
+
+            {/* <Route exact path="/">
               <Home />
             </Route>
             <Route  path="/about">
@@ -41,7 +47,7 @@ class App extends React.Component {
             <Route  exact path="/genres">
               <GenresContainer />
             </Route>
-            <Route path="/genres/:id/:name" render={routerProps => <BooksContainer {...routerProps}/>} />
+            <Route path="/genres/:id/:name" render={routerProps => <BooksContainer {...routerProps}/>} /> */}
         </Router>     
         <Footer /> 
       </div>

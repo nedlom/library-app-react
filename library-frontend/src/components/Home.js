@@ -4,28 +4,25 @@ import { connect } from 'react-redux'
 const Home = props => {
 
   const randomBook = props.books[Math.floor(Math.random() * props.books.length)];
-  
+
   if (randomBook) {
     return (
-    <div className="grid-container-home">
-      <div className="grid-home-item">
-        <div className="spacer1"></div>
-        <h3 className="center">
-          Highlighted
-          <br/>
-          Book
-        </h3>
-      </div>
-      <div className="grid-home-item">
-        <div className="spacer2"></div>
-        <div className="center">
-        <b>{randomBook.title}</b>
-        <div>by {randomBook.author}</div>
+    
+      <div className="home-grid">
+        
+        <div className="home-grid-child first">
+          <h3>Highlighted<br/>Book</h3>
         </div>
-        <hr/>
+
+        <div className="home-grid-child second">
+          <b>{randomBook.title}</b>
+          <br />
+          by {randomBook.author}
+          <hr />
           <p>{randomBook.description}</p>
+        </div>
+        
       </div>
-    </div>
     )} else {
       return <div>Loading Book</div>
     }

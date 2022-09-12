@@ -1,30 +1,7 @@
 
-.grid-container-home { 
-  display: grid; 
-  margin: auto;
-  grid-template-columns: 1fr 1fr; 
-  grid-gap: 20px; 
-  // border: 1px solid black; 
-  width: 80%; 
-  height: 50%;
-} 
-.grid-home-item { 
-  // text-align: center;
-  margin: 10px; 
-  // border: 1px solid red; 
-}
 
-.spacer1 {
-  height: 35%;
-}
 
-.spacer2 {
-  height: 20%
-}
 
-.center {
-  text-align: center;
-}
 
 #about {
   // border: solid 1px black;
@@ -88,12 +65,12 @@
 
 
 
-#home {
-  top: 50%;
-  border: solid;
-  padding: 2rem;
+// #home {
+//   top: 50%;
+//   border: solid;
+//   padding: 2rem;
   
-}
+// }
 
 hr {
   margin: 1px;
@@ -285,4 +262,25 @@ header {
 nav {
   text-align: center;
   margin-bottom: 10px;
+}
+
+
+// home ----------------------------------------------
+
+.home-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1.5fr; 
+  grid-gap: 30px; 
+  // border: 1px solid black; 
+  margin: 8%;
+  // width: 50%; 
+} 
+
+.home-grid-child { 
+  margin: 10px; 
+  // border: 1px solid red; 
+}
+
+.first {
+  margin: auto;
 }
