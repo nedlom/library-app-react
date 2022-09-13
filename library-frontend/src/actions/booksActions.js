@@ -28,3 +28,17 @@ export const deleteBook = (id) => {
     .then(dispatch({ type: 'DELETE_BOOK', payload: id}))
   }
 }
+
+export const updateBook = (id, body) => {
+  return (dispatch) => {
+    fetch(`http://127.0.0.1:3001/books/${id}`, {
+      method: 'PATCH', 
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+    .then(resp => resp.json())
+    .then(book => dispatch({ type: 'UPDATE_BOOK', payload: book})
+  )}
+}

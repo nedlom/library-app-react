@@ -3,13 +3,13 @@ import React from "react";
 const BookDetails  = props => {
   return (
     <div className="book-info">
-     <b>
-       {props.book.title} by {props.book.author}
-     </b>
-     <div>
-       {props.book.description}
-     </div>
-      <button onClick={props.onClick}>Edit Book</button>
+      <b>
+        {props.book.title} by {props.book.author}
+      </b>
+      <hr />
+      <div>
+        {props.book.description}
+      </div>
     </div>
   )
 

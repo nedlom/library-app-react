@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookEditForm from "./BookEditForm";
 import BookDetails from "./BookDetails";
+import BookButtons from "./BookButtons";
 
 
 class Book extends Component {
@@ -12,41 +13,32 @@ class Book extends Component {
     }
   }
 
-  handleButtonClick = () => {
+  toggleForm = () => {
     console.log(this.state)
-    this.setState({
-      showForm: true
-    })
+    this.setState((state) => ({
+      showForm: !this.state.showForm
+    }))
   }
 
-  handleFormSubmit = (event) =>  {
-    event.preventDefault()
-    this.setState({
-      showForm: false
-    })
-  }
-
-  
   render() {
+    console.log("Book.js")
     const showForm = this.state.showForm
     let comp
-
     if (showForm) {
-      comp = <BookEditForm onSubmit={this.handleFormSubmit} book={this.props.book} />
+      comp = <BookEditForm thing={this.toggleForm} book={this.props.book} />
     } else {
-      comp = <BookDetails book={this.props.book} onClick={this.handleButtonClick} />
+      comp = <BookDetails book={this.props.book} />
     }
-
+    
     return (
       <div className="book-card">
-      {comp}
-     <button className="delete-book-btn" 
-        onClick={() => this.props.deleteBook(this.props.book.id)}
-        >
-        delete
-      </button>  
-    </div>
+        {comp}
+        {/* <BookDetails book={this.props.book} />
+        <BookEditForm thing={this.handleFormSubmit} book={this.props.book} /> */}
+        <hr />
 
+        <BookButtons book={this.props.book} deleteBook={this.props.deleteBook} buttonClick={this.toggleForm}/>
+      </div>
     )
   }
 }

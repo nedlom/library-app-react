@@ -9,10 +9,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Router from "../router/Router";
 
-import Home from "./Home";
-import About from "./About";
-import GenresContainer from "../containers/GenresContainer";
-import BooksContainer from "../containers/BooksContainer"
+
 
 
 
@@ -20,11 +17,6 @@ import { fetchBooks } from '../actions/booksActions'
 import { fetchGenres } from '../actions/genresActions'
 
 class App extends React.Component {
-
-  constructor() {
-    super()
-    console.log("App Constructor")
-  }
 
   componentDidMount() {
     // console.log("app did mount")
@@ -45,7 +37,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("App Render ", "books: ", this.props.books, " genres: ", this.props.genres)
 
     return (
       <div>
