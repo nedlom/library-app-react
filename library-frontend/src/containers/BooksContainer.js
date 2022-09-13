@@ -19,11 +19,20 @@ class BooksContainer extends Component {
       const genre = this.props.genres.find(g => g.id === parseInt(genreId))
       const genreBooks = this.props.books.filter(b => b.genre_id === parseInt(genreId))
       
+      console.log(this.props)
       
       return (
         <div className="books-container">
-          {/* <h4>{genre.name}</h4> */}
-          <BooksForm genre_id={genreId} addBook={this.props.addBook} />
+          <div className="books-grid">
+            <div className="books-grid-child first">
+              <h4>{genre.name} <br /> Books</h4>
+            </div>
+            <div className="books-grid-child second">
+            <BooksForm genre_id={genreId} addBook={this.props.addBook} />
+            </div>
+          </div>
+          
+          
           <Books books={genreBooks}  deleteBook={this.props.deleteBook} />
           <div className="add-space"></div>
         </div>

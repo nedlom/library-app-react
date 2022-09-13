@@ -23,6 +23,7 @@ class GenresContainer extends Component {
 
   render() {
     console.log("GenresContainer Render")
+    console.log(this.props)
     return (
       <div id="genre-container">
         <GenresForm addGenre={this.props.addGenre}/>

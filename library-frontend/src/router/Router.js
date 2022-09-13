@@ -1,29 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+
+import Navbar from "../components/Navbar";
 
 import Home from "../components/Home";
 import About from "../components/About";
 import GenresContainer from "../containers/GenresContainer";
-import GenresForm from "../components/genres/GenresForm";
-// import Genres from "../components/genres/Genres";
-
-import Genre from "../components/genres/Genre";
 import BooksContainer from "../containers/BooksContainer";
 
-
-const Routes = () => {
+const Router = () => {
   return (
-    <Router>
-
+    <BrowserRouter>
+      <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
-      <Route exact path="/genres" component={GenresContainer} />
-      <Route exact path="/genres/new" component={GenresForm} />
-      <Route exact path="/genres/:id/books" component={Genre} />
-      <Route exact path="/books" component={BooksContainer} />
-      {/* <Route exact path="/genres/1" component={Genre} /> */}
-    </Router>
+      <Route exact path="/genres" component={GenresContainer} /> 
+      <Route exact path="/genres/:id" component={BooksContainer} />
+    </BrowserRouter>
   )
 }
 
-export default Routes
+export default Router

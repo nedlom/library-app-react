@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 const Home = props => {
 
-  console.log("Home")
   const randomBook = props.books[Math.floor(Math.random() * props.books.length)];
 
   if (randomBook) {

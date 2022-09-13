@@ -1,16 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import {
-  BrowserRouter as Router, Route
- } from "react-router-dom"
+// import {
+//   BrowserRouter as Router, Route
+//  } from "react-router-dom"
 
 import Header from "./Header";
 import Footer from "./Footer";
+import Router from "../router/Router";
+
 import Home from "./Home";
 import About from "./About";
 import GenresContainer from "../containers/GenresContainer";
 import BooksContainer from "../containers/BooksContainer"
+
 
 
 import { fetchBooks } from '../actions/booksActions'
@@ -31,33 +34,25 @@ class App extends React.Component {
     // console.log(this.props.books)
   }
 
+  handleLoading = () => {
+    if (this.props.books.length === 0 || this.props.genres.length === 0) {
+      return <div>Loading...</div>
+    } else {
+      return (
+        <Router />
+      )
+    }
+  }
+
   render() {
     console.log("App Render ", "books: ", this.props.books, " genres: ", this.props.genres)
 
     return (
-      
-        <Router>
-          <Header />
-
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/genres" component={GenresContainer} /> 
-          <Route exact path="/genres/:id" render={routerProps => <BooksContainer {...routerProps} />} />
-
-            {/* <Route exact path="/">
-              <Home />
-            </Route>
-            <Route  path="/about">
-              <About />
-            </Route>
-            <Route  exact path="/genres">
-              <GenresContainer />
-            </Route>
-            <Route path="/genres/:id/:name" render={routerProps => <BooksContainer {...routerProps}/>} /> */}
-        <Footer /> 
-        </Router>     
-        
-    
+      <div>
+        <Header />
+        {this.handleLoading()}
+        <Footer />
+      </div>
     )
   }
 }
