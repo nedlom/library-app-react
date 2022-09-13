@@ -8,26 +8,27 @@ import BooksForm from "../components/books/BooksForm";
 
 class BooksContainer extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchBooks()
-  // }
-
   render() {
-    
-    const genre = {
-      id: this.props.match.params.id,
-      name: this.props.match.params.name
-    }
-
-    return (
+    if (this.props.books.length === 0){
+      return (
+        <div>Loading Books</div>
+      )
+    } else {
       
-      <div className="books-container">
-        <h4>{genre.name}</h4>
-        <BooksForm genre_id={genre.id} addBook={this.props.addBook} />
-        <Books genre={genre} books={this.props.books}  deleteBook={this.props.deleteBook} />
-        <div className="add-space"></div>
-      </div>
-    )
+      const genreId = this.props.match.params.id
+      const genre = this.props.genres.find(g => g.id === parseInt(genreId))
+      const genreBooks = this.props.books.filter(b => b.genre_id === parseInt(genreId))
+      
+      
+      return (
+        <div className="books-container">
+          {/* <h4>{genre.name}</h4> */}
+          <BooksForm genre_id={genreId} addBook={this.props.addBook} />
+          <Books books={genreBooks}  deleteBook={this.props.deleteBook} />
+          <div className="add-space"></div>
+        </div>
+      )
+    }
    
   }
 }
@@ -35,6 +36,7 @@ class BooksContainer extends Component {
 const mapStateToProps = state => {
   return {
     books: state.books,
+    genres: state.genres
   }
 }
 

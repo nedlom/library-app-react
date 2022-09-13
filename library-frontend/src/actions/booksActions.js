@@ -1,10 +1,3 @@
-export const getBooksFromGenres = (books) => {
-  return {
-    type: 'ADD_BOOKS',
-    payload: books
-  }
-}
-
 export const fetchBooks = () => {
   return (dispatch) => {
     fetch('http://127.0.0.1:3001/books')
@@ -15,7 +8,6 @@ export const fetchBooks = () => {
 
 export const addBook = (body) => {
   return (dispatch) => {
-    
     fetch('http://127.0.0.1:3001/books', {
       method: 'POST', 
       headers: {
@@ -30,7 +22,6 @@ export const addBook = (body) => {
 
 export const deleteBook = (id) => {
   return(dispatch) => {
-    
     fetch(`http://127.0.0.1:3001/books/${id}`, {
       method: 'DELETE'
     })

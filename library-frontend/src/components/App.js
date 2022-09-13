@@ -2,11 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 import {
-  BrowserRouter as Router,
- 
-  Route,
- 
-} from "react-router-dom"
+  BrowserRouter as Router, Route
+ } from "react-router-dom"
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -21,13 +18,22 @@ import { fetchGenres } from '../actions/genresActions'
 
 class App extends React.Component {
 
+  constructor() {
+    super()
+    console.log("App Constructor")
+  }
+
   componentDidMount() {
+    // console.log("app did mount")
     this.props.fetchGenres()
     this.props.fetchBooks()
+    // console.log(this.props.genres)
+    // console.log(this.props.books)
   }
 
   render() {
-    console.log("App")
+    console.log("App Render ", "books: ", this.props.books, " genres: ", this.props.genres)
+
     return (
       
         <Router>
@@ -36,7 +42,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/genres" component={GenresContainer} /> 
-          <Route path="/genres/:id/:name" render={routerProps => <BooksContainer {...routerProps}/>} />
+          <Route exact path="/genres/:id" render={routerProps => <BooksContainer {...routerProps} />} />
 
             {/* <Route exact path="/">
               <Home />
@@ -56,6 +62,11 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return({
+    books: state.books,
+    genres: state.genres
+  })
+}
 
-
-export default connect(null, { fetchBooks, fetchGenres })(App)
+export default connect(mapStateToProps, { fetchBooks, fetchGenres })(App)

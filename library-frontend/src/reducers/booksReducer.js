@@ -1,4 +1,5 @@
 export const booksReducer = (state = [], action) => {
+  // console.log("booksReducer:", state)
   
   switch(action.type) {
     case 'FETCH_BOOKS':

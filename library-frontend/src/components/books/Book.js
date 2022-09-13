@@ -1,28 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
+import BookEditForm from "./BookEditForm";
+import BookDetails from "./BookDetails";
 
-const Book = props => {
 
-  console.log(props)
- 
-  return (
-    <div className="book-card">
+class Book extends Component {
 
-      <div className="book-info">
-        <b>
-          {props.book.title} by {props.book.author}
-        </b>
-        <div>
-          {props.book.description}
-        </div>
-      </div>
+  constructor(props) {
+    super(props)
+    this.state = {
+      showForm: false
+    }
+  }
 
-      
-     <button className="delete-book-btn" onClick={() => props.deleteBook(props.book.id)}>Delete</button>
-    
-    
-  </div>
-    
-  )
+  handleButtonClick = () => {
+    console.log(this.state)
+    this.setState({
+      showForm: true
+    })
+  }
+
+  handleFormSubmit = (event) =>  {
+    event.preventDefault()
+    this.setState({
+      showForm: false
+    })
+  }
+
+  
+  render() {
+    const showForm = this.state.showForm
+    let comp
+
+    if (showForm) {
+      comp = <BookEditForm onSubmit={this.handleFormSubmit} book={this.props.book} />
+    } else {
+      comp = <BookDetails book={this.props.book} onClick={this.handleButtonClick} />
+    }
+
+    return (
+      <div className="book-card">
+      {comp}
+     <button className="delete-book-btn" 
+        onClick={() => this.props.deleteBook(this.props.book.id)}
+        >
+        delete
+      </button>  
+    </div>
+
+    )
+  }
 }
 
 export default Book

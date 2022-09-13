@@ -4,9 +4,10 @@ import GenreDelete from "./GenreDelete";
 import GenreLink from "./GenreLink";
 
 const Genre = props => {
+  
   return (
     <div className="genre-grid-item">
-      <GenreLink className="genre-grid-item" index={props.index} genre={props.genre} genreId={props.genre.id} />
+      <GenreLink className="genre-grid-item" index={props.index} genre={props.genre} />
       <GenreDelete genre={props.genre} deleteGenre={props.deleteGenre} /> 
     </div>
   ) 
