@@ -12,8 +12,6 @@ const BookDetails  = props => {
       </div>
     </div>
   )
-
-
 }
 
 export default BookDetails 

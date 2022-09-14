@@ -3,7 +3,6 @@ import BookEditForm from "./BookEditForm";
 import BookDetails from "./BookDetails";
 import BookButtons from "./BookButtons";
 
-
 class Book extends Component {
 
   constructor(props) {
@@ -33,10 +32,7 @@ class Book extends Component {
     return (
       <div className="book-card">
         {comp}
-        {/* <BookDetails book={this.props.book} />
-        <BookEditForm thing={this.handleFormSubmit} book={this.props.book} /> */}
         <hr />
-
         <BookButtons book={this.props.book} deleteBook={this.props.deleteBook} buttonClick={this.toggleForm}/>
       </div>
     )

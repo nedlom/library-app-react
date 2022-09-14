@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-import { fetchBooks, addBook, deleteBook } from "../actions/booksActions";
+import { addBook, deleteBook } from "../actions/booksActions";
 
 import Books from "../components/books/Books";
 import BooksForm from "../components/books/BooksForm";
@@ -25,7 +25,6 @@ class BooksContainer extends Component {
           </div>
         </div>
         
-        
         <Books books={genreBooks}  deleteBook={this.props.deleteBook} />
         <div className="add-space"></div>
       </div>
@@ -40,5 +39,12 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    addBook: body => dispatch(addBook(body)),
+    deleteBook: id => dispatch(deleteBook(id))
+  }
+}
 
-export default connect(mapStateToProps, { fetchBooks, addBook, deleteBook })(BooksContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(BooksContainer)

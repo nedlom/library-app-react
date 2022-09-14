@@ -228,7 +228,16 @@ nav {
   // border: solid;
   margin-left: 20px;
   margin-right: 20px;
+  color: black;
 }
+
+.link:hover {
+  color: black;
+  border: solid;
+  text-decoration: none;
+}
+
+
 
 // home ----------------------------------------------
 
@@ -292,19 +301,25 @@ nav {
   text-align: center;
 }
 
-
-.delete-btn {
-  background-color: white;
-  border: none;
-  font-size: x-small;
-  padding: 0;
-}
-
 .delete-div {
   margin: 5px;
   border-top: solid 0.5px black;
   
 }
+
+.delete-btn {
+  background-color: white;
+  border: none;
+  font-size: x-small;
+  margin-top: 2px;
+}
+
+.delete-btn:hover { 
+  color: black;
+  border: solid black;
+}
+
+
 
 .genre-link {
   display: block;
@@ -336,17 +351,20 @@ nav {
 
 .book-btns {
   display: inline-block;
-
 }
 
 .book-btns-grid {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
-  // border: solid;
 }
 
 .book-btn {
   background-color: white;
   border: none;
   font-size: x-small;
+}
+
+.book-btn:hover {
+  color: black;
+  border: solid black;
 }

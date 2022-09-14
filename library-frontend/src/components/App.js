@@ -10,29 +10,21 @@ import Footer from "./Footer";
 import Router from "../router/Router";
 
 
-
-
-
 import { fetchBooks } from '../actions/booksActions'
 import { fetchGenres } from '../actions/genresActions'
 
 class App extends React.Component {
 
   componentDidMount() {
-    // console.log("app did mount")
     this.props.fetchGenres()
     this.props.fetchBooks()
-    // console.log(this.props.genres)
-    // console.log(this.props.books)
   }
 
   handleLoading = () => {
     if (this.props.books.length === 0 || this.props.genres.length === 0) {
       return <div>Loading...</div>
     } else {
-      return (
-        <Router />
-      )
+      return <Router />
     }
   }
 
@@ -55,4 +47,11 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { fetchBooks, fetchGenres })(App)
+const mapDispatchToProps = dispatch => {
+  return { 
+    fetchBooks: () => dispatch(fetchBooks()),
+    fetchGenres: () => dispatch(fetchGenres())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

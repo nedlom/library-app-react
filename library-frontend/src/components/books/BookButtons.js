@@ -5,12 +5,16 @@ const BookButtons = props => {
 
   return (
     <div className="book-btns-grid">
-      <button className="book-btn" onClick={props.buttonClick}>
-        Edit
-      </button>
-      <button className="book-btn" onClick={() => props.deleteBook(props.book.id)}>
-        Delete
-      </button>
+      <div>
+        <button className="book-btn" onClick={props.buttonClick}>
+          Edit
+        </button>
+      </div>
+      <div>
+        <button className="book-btn" onClick={() => props.deleteBook(props.book.id)}>
+          Delete
+        </button>
+      </div>
     </div>
   )
 }

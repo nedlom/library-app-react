@@ -2,14 +2,14 @@ import React, { Component } from "react";
 
 class BooksForm extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     
     this.state = {
       title: "",
       author: "",
       description: "",
-      genre_id: ""
+      genre_id: this.props.genre_id
     }
   }
 
@@ -17,7 +17,7 @@ class BooksForm extends Component {
     const { name, value } = event.target
     this.setState({
       [name]: value, 
-      genre_id: this.props.genre_id
+      // genre_id: this.props.genre_id
     })
   }
 
@@ -29,7 +29,7 @@ class BooksForm extends Component {
         title: "",
         author: "",
         description: "",
-        genre_id: ""
+        // genre_id: ""
     })
   }
 
@@ -44,7 +44,6 @@ class BooksForm extends Component {
         
         <div className="book-form-inputs">
           <textarea 
-            // id="text-area" 
             rows="5" 
             cols="50" 
             type="text" 
