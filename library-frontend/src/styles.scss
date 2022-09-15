@@ -1,24 +1,13 @@
 body {
   border-top: solid 5px;
+  padding-bottom: 4%;
 }
-
-
-
-
 
 .ul-align {
   line-height: 2.5em;
   display: inline-block;
   text-align: left;
 }
-
-
-
-
-
-
-
-
 
 
 #container {
@@ -71,17 +60,6 @@ h1 {
 //   height: 100%
 // }
 
-
-
-
-.add-space {
-  height: 4%;
-}
-// .spacer {
-//   height: 100%;
-// }
-
-
  #genre, #book, .empty {
   text-align: center;
   border: solid;
@@ -95,7 +73,6 @@ h1 {
   border: solid black;
   width: 50%;
 }
-
 
 .section-name {
   display: inline;
@@ -149,7 +126,7 @@ h1 {
 
 .book-card {
   border: solid 0.5px;
-  margin: 30px;
+  margin: 30px 80px;
   padding: 20px;
 }
 

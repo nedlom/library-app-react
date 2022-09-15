@@ -46,7 +46,6 @@ class BooksForm extends Component {
           <textarea 
             rows="5" 
             cols="50" 
-            type="text" 
             onChange={this.handleChange} 
             value={this.state.description} 
             name="description" 

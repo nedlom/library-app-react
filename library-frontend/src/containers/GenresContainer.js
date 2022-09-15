@@ -12,14 +12,14 @@ import GenresForm from "../components/genres/GenresForm";
 
 class GenresContainer extends Component {
 
-  constructor() {
-    super()
-    console.log("GenresContainer Constructor")
-  }
+  // constructor() {
+  //   super()
+  //   console.log("GenresContainer Constructor")
+  // }
   
-  componentDidMount() {
-    this.props.fetchGenres()
-  }
+  // componentDidMount() {
+  //   this.props.fetchGenres()
+  // }
 
   render() {
     console.log("GenresContainer Render")

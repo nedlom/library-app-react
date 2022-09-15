@@ -1,7 +1,6 @@
 import React from "react";
 
 const BookButtons = props => {
-  console.log(props)
 
   return (
     <div className="book-btns-grid">

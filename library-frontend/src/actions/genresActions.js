@@ -1,6 +1,7 @@
 // console.log("genres actions")
 
 export const fetchGenres = () => {
+  console.log(6)
   return (dispatch) => {
     fetch('http://127.0.0.1:3001/genres')
     .then(resp => resp.json())

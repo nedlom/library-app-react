@@ -3,6 +3,8 @@ import BookEditForm from "./BookEditForm";
 import BookDetails from "./BookDetails";
 import BookButtons from "./BookButtons";
 
+import Form from "./Form";
+
 class Book extends Component {
 
   constructor(props) {
@@ -24,10 +26,11 @@ class Book extends Component {
     const showForm = this.state.showForm
     let comp
     if (showForm) {
-      comp = <BookEditForm thing={this.toggleForm} book={this.props.book} />
+      comp = <Form toggleForm={this.toggleForm} book={this.props.book} getForm={this.props.getForm} submitValue={"Update"}/>
     } else {
       comp = <BookDetails book={this.props.book} />
     }
+
     
     return (
       <div className="book-card">

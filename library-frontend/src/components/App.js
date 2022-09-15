@@ -16,8 +16,8 @@ import { fetchGenres } from '../actions/genresActions'
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.fetchGenres()
     this.props.fetchBooks()
+    this.props.fetchGenres()
   }
 
   handleLoading = () => {
@@ -29,7 +29,6 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
       <div>
         <Header />

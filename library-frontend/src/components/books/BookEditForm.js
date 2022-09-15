@@ -38,7 +38,6 @@ class BookEditForm extends Component {
         </div>
         
         <textarea 
-          type="text" 
           className="book-form-inputs"
           rows="5" 
           cols="50"
