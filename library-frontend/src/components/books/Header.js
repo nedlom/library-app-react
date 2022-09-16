@@ -1,7 +1,7 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./BookForm";
 
-const Header = ({ genre, getForm }) => {
+const HeaderB = ({ genre, getForm }) => {
   return (
     <div className="books-grid">
       <div className="books-grid-child first">
@@ -14,4 +14,4 @@ const Header = ({ genre, getForm }) => {
   )
 }
 
-export default Header
+export default HeaderB

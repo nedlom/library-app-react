@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import BookEditForm from "./BookEditForm";
+// import BookEditForm from "./BookEditForm";
 import BookDetails from "./BookDetails";
 import BookButtons from "./BookButtons";
 
-import Form from "./Form";
+import BookForm from "./BookForm";
 
 class Book extends Component {
 
@@ -22,21 +22,28 @@ class Book extends Component {
   }
 
   render() {
-    console.log("Book.js")
-    const showForm = this.state.showForm
     let comp
-    if (showForm) {
-      comp = <Form toggleForm={this.toggleForm} book={this.props.book} getForm={this.props.getForm} submitValue={"Update"}/>
+    if (this.state.showForm) {
+      comp = <BookForm 
+                toggleForm={this.toggleForm} 
+                book={this.props.book} 
+                genre_id={this.props.book.genre_id}
+                updateBook={this.props.updateBook} 
+                submitValue={"Update"}
+              />
     } else {
       comp = <BookDetails book={this.props.book} />
     }
 
-    
     return (
       <div className="book-card">
         {comp}
         <hr />
-        <BookButtons book={this.props.book} deleteBook={this.props.deleteBook} buttonClick={this.toggleForm}/>
+        <BookButtons 
+          book={this.props.book} 
+          deleteBook={this.props.deleteBook} 
+          buttonClick={this.toggleForm}
+        />
       </div>
     )
   }

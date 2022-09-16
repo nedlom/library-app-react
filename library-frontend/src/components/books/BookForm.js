@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+class BookForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -8,7 +8,7 @@ class Form extends Component {
       title: props.book ? props.book.title : "", 
       author: props.book ? props.book.author : "", 
       description: props.book ? props.book.description : "",
-      genre_id: props.book ? props.book.genre_id : ""
+      genre_id: props.genre_id
     }
   }
 
@@ -19,44 +19,25 @@ class Form extends Component {
     })
   }
 
-  // handleSubmit = event => {
-  //   event.preventDefault()
-  //   // debugger
-
-  //   if( this.props.hasOwnProperty("addBook")) {
-  //     const body = this.state
-  //     delete body.id
-  //     this.props.addBook(body)
-  //   }
-
-  //   if (this.props.hasOwnProperty("updateBook")) {
-  //     const body = {title: "", author: "", description: "", genre_id: "", ...this.state}
-  //     this.props.updateBook(this.state.id, body)
-  //     this.props.toggleForm()
-  //   }
-
-  //   this.setState({
-  //     title: "",
-  //     author: "",
-  //     description: ""
-  //   })
-  // }
-
   handleSubmit = event => {
     event.preventDefault()
-    this.props.getForm(this.state)
+    const book = Object.assign({}, this.state)
+    const id = book.id
+    delete book.id
 
+    if (id === "") {
+      this.props.addBook(book)
+    } else {
+      this.props.updateBook(id, book)
+      this.props.toggleForm()
+    }
+   
     this.setState({
           title: "",
           author: "",
           description: ""
         })
-
-    if (this.props.toggleForm){
-      this.props.toggleForm()
-    }
   }
-
 
   render() {
     return (
@@ -96,4 +77,4 @@ class Form extends Component {
   }
 }
 
-export default Form
+export default BookForm

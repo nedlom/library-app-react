@@ -2,7 +2,7 @@ import React from "react";
 
 import Book from './Book'
 
-const Books = ({  books, getForm, deleteBook }) => {
+const Books = ({  books, updateBook, deleteBook }) => {
 
   if (books.length === 0) {
     return (
@@ -12,7 +12,14 @@ const Books = ({  books, getForm, deleteBook }) => {
   
   return (
     <div>
-      {books.map(book => <Book key={book.id} book={book} deleteBook={deleteBook} getForm={getForm} />)}
+      {books.map(book => (
+        <Book 
+          key={book.id} 
+          book={book} 
+          deleteBook={deleteBook} 
+          updateBook={updateBook}
+        />
+      ))}
     </div>
   )
 }
