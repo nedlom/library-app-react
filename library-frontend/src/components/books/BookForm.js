@@ -20,6 +20,7 @@ class BookForm extends Component {
   }
 
   handleSubmit = event => {
+    
     event.preventDefault()
     const book = Object.assign({}, this.state)
     const id = book.id
@@ -28,8 +29,9 @@ class BookForm extends Component {
     if (id === "") {
       this.props.addBook(book)
     } else {
-      this.props.updateBook(id, book)
       this.props.toggleForm()
+      this.props.updateBook(id, book)
+      
     }
    
     this.setState({

@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-
 import { addBook, updateBook, deleteBook } from "../actions/booksActions";
 
-import Books from "../components/books/Books";
-// import BooksForm from "../components/books/BooksForm";
 import BookForm from "../components/books/BookForm";
-// import HeaderB from "../components/books/Header";
-// import Header from "../components/Header";
-
+import Books from "../components/books/Books";
 
 class BooksContainer extends Component {
 
@@ -22,19 +17,6 @@ class BooksContainer extends Component {
       return book.genre_id === this.genre.id
     })
   }
-
-  // getForm = formState => {
-  //   if (formState.id === "") {
-  //     delete formState.id
-  //     debugger
-  //     formState.genre_id = this.genre.id
-  //     this.props.addBook(formState)
-  //   } else {
-  //     const id = formState.id
-  //     delete formState.id
-  //     this.props.updateBook(id, formState)
-  //   }
-  // }
 
   render() {
     console.log("Books Container Render")

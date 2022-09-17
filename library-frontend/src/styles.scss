@@ -89,7 +89,7 @@ h1 {
 // books -------------------------------
 
 .books-container {
-  text-align: center;
+  // text-align: center;
   padding: 0px 40px;
   margin: 20px;
   background-color: white;
@@ -307,6 +307,7 @@ nav {
 }
 
 .book-btns-grid {
+  text-align: center;
   display: grid; 
   grid-template-columns: 1fr 1fr; 
 }
@@ -320,4 +321,51 @@ nav {
 .book-btn:hover {
   color: black;
   border: solid black;
+}
+
+.book-grid {
+  text-align: center;
+  border: solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.book-grid-item {
+  display: block;
+  border: solid;
+  // border: solid;
+  padding: 10px;
+  color: black;
+  background-color: e2e2e3;
+  // padding: 20px;
+  // color: black;
+}
+
+.book-link {
+  color: black;
+}
+
+
+.book-section {
+  border: solid;
+  margin: 5px;
+}
+
+.letter {
+  border-bottom: solid 0.5px;
+  margin: 5px;
+}
+
+.letter-button {
+  background-color: e2e2e3;
+  border: none
+}
+
+.test {
+  border: solid;
+  margin: 20px;
+}
+
+.subtest{
+  border: solid;
 }

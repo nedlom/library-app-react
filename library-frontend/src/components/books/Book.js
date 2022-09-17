@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import BookEditForm from "./BookEditForm";
 import BookDetails from "./BookDetails";
-import BookButtons from "./BookButtons";
-
 import BookForm from "./BookForm";
+import { updateBook } from "../../actions/booksActions";
+import { connect } from "react-redux"
 
 class Book extends Component {
 
@@ -21,32 +20,47 @@ class Book extends Component {
     }))
   }
 
-  render() {
-    let comp
+  bookCardMain = book => {
     if (this.state.showForm) {
-      comp = <BookForm 
-                toggleForm={this.toggleForm} 
-                book={this.props.book} 
-                genre_id={this.props.book.genre_id}
-                updateBook={this.props.updateBook} 
-                submitValue={"Update"}
-              />
+      return (
+        <BookForm 
+          toggleForm={this.toggleForm} 
+          book={book} 
+          genre_id={book.genre_id}
+          updateBook={this.props.updateBook} 
+          submitValue={"Update"}
+        /> 
+      )
     } else {
-      comp = <BookDetails book={this.props.book} />
+      return <BookDetails book={book} />
     }
+  }
+
+  render() {
+    const book = this.props.books.find(book => {
+      return book.id === parseInt(this.props.match.params.id)
+    })
 
     return (
       <div className="book-card">
-        {comp}
+        {this.bookCardMain(book)}
         <hr />
-        <BookButtons 
-          book={this.props.book} 
-          deleteBook={this.props.deleteBook} 
-          buttonClick={this.toggleForm}
-        />
+        <button className="book-btn" onClick={this.toggleForm}>
+            Edit
+        </button>
       </div>
     )
   }
 }
 
-export default Book
+const mapStateToProps = state => {
+  return { books: state.books }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateBook: (id, body) => dispatch(updateBook(id, body)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Book)

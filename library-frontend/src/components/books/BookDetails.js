@@ -4,12 +4,19 @@ const BookDetails  = props => {
   return (
     <div className="book-info">
       <b>
-        {props.book.title} by {props.book.author}
+        {props.book.title}
       </b>
+
+      <div>
+        by {props.book.author}
+      </div>
+
       <hr />
+
       <div>
         {props.book.description}
       </div>
+      
     </div>
   )
 }
