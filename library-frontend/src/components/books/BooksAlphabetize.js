@@ -1,7 +1,5 @@
 import React from "react";
-import Books1 from "./Books1";
 import BookLinks from "./BookLinks";
-
 
 const BookAlphabetize = ({ books, handleCheck, deleteBook }) => {
  
@@ -38,20 +36,10 @@ const BookAlphabetize = ({ books, handleCheck, deleteBook }) => {
             deleteBook={deleteBook} 
           />
 
-          {/* <Books1
-            books={alphaObject[letter]} 
-            handleCheck={handleCheck} 
-            deleteBook={deleteBook} 
-            handleClick={handleClick}
-          /> */}
-
-      
         </div>
       </div>
     )
   })
-
-  
 
   return (
     <div className="alphabetized-books">

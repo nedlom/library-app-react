@@ -64,8 +64,8 @@ class BookForm extends Component {
         
         <textarea 
           className="book-form-inputs"
-          rows="5" 
-          cols="50"
+          rows={this.props.submitValue === "Update" ? "8" : "5"} 
+          cols={this.props.submitValue === "Update" ? "80" : "50"}
           value={this.state.description} 
           onChange={this.handleChange}
           name="description"

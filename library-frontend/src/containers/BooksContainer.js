@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-
 import { addBook, updateBook, deleteBook } from "../actions/booksActions";
-
-import BookForm from "../components/books/BookForm";
 import BookAlphabetize from "../components/books/BooksAlphabetize";
-// import Books from "../components/books/Books";
-// import Books1 from "../components/books/Books1";
+import BooksHeader from "../components/books/BooksHeader";
 
 class BooksContainer extends Component {
-
   constructor(props) {
     super(props)
     this.genre = props.genres.find(genre => {
@@ -21,40 +16,12 @@ class BooksContainer extends Component {
   }
 
   render() {
-    console.log("Books Container Render")
     const genreBooks = this.props.books.filter(b => b.genre_id === this.genre.id)
     
     return (
       <div className="books-container">
-
-        {/* Extract into seperate component */}
-
-
-        {/* <HeaderB genre={this.genre} getForm={this.getForm} /> */}
-
-        <div className="books-grid">
-          <div className="books-grid-child first">
-            <h4>{this.genre.name} <br /> Books</h4>
-          </div>
-          <div className="books-grid-child second">
-            <BookForm genre_id={this.genre.id} addBook={this.props.addBook} submitValue="Add Book" />
-          </div>
-        </div>
-
-        {/* <Books 
-          books={genreBooks}  
-          getForm={this.getForm} 
-          updateBook={this.props.updateBook}
-          deleteBook={this.props.deleteBook}
-        /> */}
-
-        {/* <Books1 
-          books={genreBooks}   
-          deleteBook={this.props.deleteBook}
-        /> */}
-
+        <BooksHeader genre={this.genre} addBook={this.props.addBook} />
         <BookAlphabetize books={genreBooks} deleteBook={this.props.deleteBook} />
-
       </div>
     )
   }

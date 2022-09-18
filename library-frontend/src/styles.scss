@@ -102,20 +102,13 @@ h1 {
 
 .book-card {
   border: solid 0.5px;
-  margin: 30px 80px;
-  padding: 20px;
+  margin: 8% 20%;
+  padding: 3%;
 }
 
 .book-card > form {
   text-align: center;
 }
-
-// .delete-book-div {
-//   padding: 30pxl;
-//   border: solid;
-// }
-
-
 
 .book-form-inputs {
   margin: 5px;
@@ -400,4 +393,56 @@ nav {
   // border: solid;
   margin-right: 10%;
   margin-left: 10%;
+}
+
+// book index ------------------------------------------------
+.genre-select-div {
+  text-align: center;
+  // border: solid;
+}
+
+.genre-select {
+  margin: 5px;
+}
+
+.title-input { 
+  margin: 5px;
+}
+
+.selected-books {
+  text-align: center;
+  // border: solid 0.5px;
+  margin: 0 20% 2% 20%;
+  padding: 3%;
+}
+
+.searched-book {
+  margin: 0 20% 2% 20%;
+}
+
+.book-index-genre-name {
+  border-bottom: solid 0.5px;
+  margin-bottom: 5px;
+}
+.check {
+  border: solid;
+}
+
+.fields {
+  text-align: center;
+  border: solid;
+  padding: 2%;
+  margin: 0 20%;
+}
+
+.search {
+  margin: 5px;
+}
+
+.alpha-button {
+  margin: 5px;
+}
+
+.search-sort {
+  text-align: center;
 }
