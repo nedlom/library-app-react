@@ -1,14 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 
-// import {
-//   BrowserRouter as Router, Route
-//  } from "react-router-dom"
-
 import Header from "./Header";
 import Footer from "./Footer";
 import Router from "../router/Router";
-
 
 import { fetchBooks } from '../actions/booksActions'
 import { fetchGenres } from '../actions/genresActions'

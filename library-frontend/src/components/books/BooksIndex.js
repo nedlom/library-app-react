@@ -77,7 +77,7 @@ class BooksIndex extends Component {
     this.state = {
       title: "",
       books: this.props.books.concat([]),
-      sort: 'regular',
+      sort: 'Unsorted',
       genreId: "", 
     }
   }
@@ -96,15 +96,15 @@ class BooksIndex extends Component {
 
   setBooks = () => {
     this.setState(state => {
-      if (state.sort === "regular") {
+      if (state.sort === "Unsorted") {
         return ({
           books: this.state.books.sort((a, b) => a.title.localeCompare(b.title)),
-          sort: "alphabetical"
+          sort: "Sorted Alphabetically"
         }) 
       } else {
         return ({
           books: this.props.books.concat([]),
-          sort: "regular"
+          sort: "Unsorted"
         })
       }
     })
@@ -151,7 +151,7 @@ class BooksIndex extends Component {
 
         <div className="selected-books">
           <div className="book-index-genre-name">
-            <b>Sorted/Unsorted</b> 
+            <b>Sorted/Unsorted - Current Status: </b> {this.state.sort}
           </div>
           {sortUnsortBookDivs}
         </div>
