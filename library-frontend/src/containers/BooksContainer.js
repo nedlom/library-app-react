@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import { addBook, updateBook, deleteBook } from "../actions/booksActions";
 
 import BookForm from "../components/books/BookForm";
-import Books from "../components/books/Books";
+import BookAlphabetize from "../components/books/BooksAlphabetize";
+// import Books from "../components/books/Books";
+// import Books1 from "../components/books/Books1";
 
 class BooksContainer extends Component {
 
@@ -39,12 +41,19 @@ class BooksContainer extends Component {
           </div>
         </div>
 
-        <Books 
+        {/* <Books 
           books={genreBooks}  
           getForm={this.getForm} 
           updateBook={this.props.updateBook}
           deleteBook={this.props.deleteBook}
-        />
+        /> */}
+
+        {/* <Books1 
+          books={genreBooks}   
+          deleteBook={this.props.deleteBook}
+        /> */}
+
+        <BookAlphabetize books={genreBooks} deleteBook={this.props.deleteBook} />
 
       </div>
     )

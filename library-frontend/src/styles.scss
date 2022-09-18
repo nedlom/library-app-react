@@ -106,6 +106,10 @@ h1 {
   padding: 20px;
 }
 
+.book-card > form {
+  text-align: center;
+}
+
 // .delete-book-div {
 //   padding: 30pxl;
 //   border: solid;
@@ -127,6 +131,10 @@ span {
 
 .no-books {
   line-height: 200px;
+}
+
+.books-grid {
+  text-align: center;
 }
 
 // footer -----------------------------------
@@ -362,10 +370,34 @@ nav {
 }
 
 .test {
-  border: solid;
-  margin: 20px;
+  // border: solid;
+  // margin: 20px;
+  margin-top: 20px;
 }
 
-.subtest{
-  border: solid;
+.subtest {
+  border-top: solid 0.5px;
+  margin: none
+}
+
+.book-link-div {
+  margin: 5px;
+}
+
+.book-delete-button {
+  background: white;
+  border: none;
+  font-size: x-small;
+  margin-left: 5px;
+}
+
+.book-delete-button:hover { 
+  color: black;
+  border: solid black;
+}
+
+.alphabetized-books {
+  // border: solid;
+  margin-right: 10%;
+  margin-left: 10%;
 }
