@@ -398,6 +398,7 @@ nav {
 // book index ------------------------------------------------
 .genre-select-div {
   text-align: center;
+  margin: 10px;
   // border: solid;
 }
 
@@ -413,11 +414,11 @@ nav {
   text-align: center;
   // border: solid 0.5px;
   margin: 0 20% 2% 20%;
-  padding: 3%;
+  // padding: 3%;
 }
 
 .searched-book {
-  margin: 0 20% 2% 20%;
+  margin: 2% 20% 2% 20%;
 }
 
 .book-index-genre-name {
@@ -430,7 +431,7 @@ nav {
 
 .fields {
   text-align: center;
-  border: solid;
+  border: solid 0.5px;
   padding: 2%;
   margin: 0 20%;
 }

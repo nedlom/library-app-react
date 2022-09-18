@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 
-
 class Dropdown extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleChange = event => { 
     this.props.setGenreId(event.target.value)
   }
@@ -84,13 +79,10 @@ class BooksIndex extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // value: 'select',
       title: "",
       books: this.props.books.concat([]),
       sort: 'regular',
       genreId: "", 
-      inputTitle: "",
-      submitTitle: ""
     }
   }
 
@@ -120,140 +112,54 @@ class BooksIndex extends Component {
         })
       }
     })
-    // console.log(this.props.books)
-    // if(this.state.sort === "regular") {
-    //   this.setState({
-    //     book: this.state.books.sort((a, b) => a.title.localeCompare(b.title)),
-    //     sort: "alphabetical"
-    //   })
-    //   console.log(this.props.books)
-    // } else {
-    //   debugger
-    //   this.setState({
-    //     book: this.props.books.concat([]),
-    //     sort: "regular"
-    //   })
-    // }
   }
-  
-  // selectChange = event => {
-  //   console.log("here")
-  //   this.setState({
-  //     genreId: event.target.value
-  //   })
-  // }
-
-  
-
-  // genreDropdown = () => {
-  //   const options = this.props.genres.map(genre => (
-  //     <option key={genre.id} value={genre.id}>{genre.name}</option>
-  //   )) 
-
-  //   return (
-  //     <div className="genre-select-div">
-  //       Select A Genre: 
-  //       <select className="genre-select" onChange={this.selectChange} value={this.state.value}>
-  //         <option value="">Choose...</option>
-  //         <option value="">All</option>
-  //         {options}
-  //       </select>
-  //     </div>
-  //   )
-  // }
-
-  // handleChange = event => {
-  //   this.setState({
-  //     title: event.target.value
-  //   })
-  // } 
-
-  // handleSubmit = event => {
-  //   // genre
-  // }
-
-  // form = () => {
-  //   return (
-  //     <form className="search" onSubmit={this.handleSubmit}>
-  //       Search For A Title: 
-  //       <input className="title-input" type="text" value={this.state.inputTitle} onChange={this.handleChange}/>
-  //       <input className="title-input" type="submit" value="Search" />
-  //     </form>
-  //   )
-  // }
-
-  // alphabetize = () => {
-  //   return <button className="alpha-button">Alphabetize</button>
-  // }
 
   render() {
-    console.log("Render: ", this.state.sort)
-    console.log("Render: ", this.props.books)
-   
     const book = this.props.books.find(book => book.title === this.state.title)
-    const sortedBooks = this.state.books
-    const sortedBooksDivs = sortedBooks.map(book => <div key={book.id}>{book.title}</div>)
-
-
-
-    // let title 
-    // if (this.state.title !== "") {
-    //   const book = this.props.books.find(book => book.title === this.state.title)
-    //   title = book.title
-    // } else {
-    //   debugger
-    //   title = ""
-    // }
 
     let books 
     let genre
     if (this.state.genreId === "") {
-      console.log("no genreId")
       books = this.props.books
     } else {
-      console.log("genreId")
       genre = this.props.genres.find(genre => genre.id === parseInt(this.state.genreId))
       books = this.props.books.filter(book => {
         return book.genre_id === parseInt(this.state.genreId)
       })
     }
+    const genreBookDivs = books.map(book => <div key={book.id}>{book.title}</div>)
 
-    const bookDivs = books.map(book => <div key={book.id}>{book.title}</div>)
+    const sortUnsortBookDivs = this.state.books.map(book => <div key={book.id}>{book.title}</div>)
     
     return (
-      
-      
       <div className="search-sort">
         
         <div className="fields">
-          <Dropdown genres={this.props.genres} setGenreId={this.setGenreId} />
+          <b>Search And Sort Functions</b>
+          <hr />
           <Form setTitle={this.setTitle} />
+          <Dropdown genres={this.props.genres} setGenreId={this.setGenreId} />
           <SortUnsort setBooks={this.setBooks} />
-          {/* {this.genreDropdown()} */}
+        </div>
 
-          {/* {this.form()} */}
-
-
-          {/* {this.alphabetize()} */}
+        <div className="searched-book">
+            <b>Searched: </b>{book ? book.title : "None"}
         </div>
        
         <div className="selected-books">
           <div className="book-index-genre-name">
-            <b>Selected Books: {genre ? genre.name : "All"}</b> 
+            <b>Selected: </b>{genre ? genre.name : "All"}
           </div>
-          {bookDivs}
-        </div>
-
-        <div className="searched-book">
-            <b>Searched Book</b> : {book ? book.title : null}
+          {genreBookDivs}
         </div>
 
         <div className="selected-books">
           <div className="book-index-genre-name">
-            <b>Sorted Books</b> 
+            <b>Sorted/Unsorted</b> 
           </div>
-          {sortedBooksDivs}
+          {sortUnsortBookDivs}
         </div>
+
       </div>
     )
   }
