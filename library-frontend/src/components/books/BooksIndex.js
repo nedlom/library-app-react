@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 
 class Dropdown extends Component {
@@ -59,10 +59,6 @@ class Form extends Component {
 }
 
 class SortUnsort extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleClick = () => {
     this.props.setBooks()
   }
