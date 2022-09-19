@@ -10,9 +10,9 @@ class BooksContainer extends Component {
     this.genre = props.genres.find(genre => {
       return genre.id === parseInt(props.match.params.id)
     })
-    this.books = props.books.filter(book => {
-      return book.genre_id === this.genre.id
-    })
+    // this.books = props.books.filter(book => {
+    //   return book.genre_id === this.genre.id
+    // })
   }
 
   render() {

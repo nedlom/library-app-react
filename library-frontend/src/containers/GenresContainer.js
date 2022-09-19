@@ -11,19 +11,7 @@ import Genres from "../components/genres/Genres";
 import GenresForm from "../components/genres/GenresForm";
 
 class GenresContainer extends Component {
-
-  // constructor() {
-  //   super()
-  //   console.log("GenresContainer Constructor")
-  // }
-  
-  // componentDidMount() {
-  //   this.props.fetchGenres()
-  // }
-
   render() {
-    console.log("GenresContainer Render")
-    console.log(this.props)
     return (
       <div id="genre-container">
         <GenresForm addGenre={this.props.addGenre}/>

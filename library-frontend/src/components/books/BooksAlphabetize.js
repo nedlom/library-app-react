@@ -43,6 +43,7 @@ const BookAlphabetize = ({ books, handleCheck, deleteBook }) => {
 
   return (
     <div className="alphabetized-books">
+      {console.log("books alpha")}
       <button onClick={handleClick}>Checking</button>
       {alphaDivs}
     </div>

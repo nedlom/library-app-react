@@ -12,6 +12,8 @@ class Dropdown extends Component {
       <option key={genre.id} value={genre.id}>{genre.name}</option>
     )) 
 
+    console.log("Dropdown")
+
     return (
       <div className="genre-select-div">
         Select A Genre: 
@@ -127,7 +129,9 @@ class BooksIndex extends Component {
 
     const sortUnsortBookDivs = this.state.books.map(book => <div key={book.id}>{book.title}</div>)
     
+    console.log("BooksIndex render")
     return (
+      
       <div className="search-sort">
         
         <div className="fields">

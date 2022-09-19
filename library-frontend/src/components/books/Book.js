@@ -41,6 +41,8 @@ class Book extends Component {
       return book.id === parseInt(this.props.match.params.id)
     })
 
+    console.log("Book render")
+
     return (
       <div className="book-card">
         {this.bookCardMain(book)}

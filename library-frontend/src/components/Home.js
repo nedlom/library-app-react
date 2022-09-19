@@ -9,6 +9,7 @@ const Home = props => {
     return (
     
       <div className="home-grid">
+        {console.log("home")}
         
         <div className="home-grid-child first">
           <h3>Highlighted<br/>Book</h3>
